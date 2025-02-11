@@ -22,7 +22,7 @@ const ColumnConfigurator = ({ headerRow, onUpdate, resetKey }) => {
 
   const detectColumns = () => {
     if (headerRow.length <= excludedColumns) {
-      setColumns([]); // No valid columns, so clear the columns state
+      setColumns([]);
       onUpdate({ columns: [], excludedColumns });
       return;
     }
@@ -99,7 +99,6 @@ const App = () => {
       columns: [],
       excludedColumns: columnConfig.excludedColumns,
     });
-    // Allow ColumnConfigurator to run detectColumns
     setTimeout(() => setResetKey((prevKey) => prevKey + 1), 0);
   };
 
